@@ -104,6 +104,47 @@ nav .container {
   transform: translateY(-5px);
 }
 
+.mission-vision {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las secciones */
+  gap: 2rem; /* Espacio entre las secciones */
+  margin: 3rem 0; /* Espacio arriba y abajo */
+  padding: 0 1rem; /* Espacio lateral */
+}
+
+.mission, .vision {
+  flex: 1; /* Ambas secciones ocupan el mismo espacio */
+  background-color: #f7f7f7; /* Fondo claro para diferenciarlas */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+  transition: all 0.3s ease-in-out; /* Transición suave para los efectos */
+  cursor: pointer; /* Cambiar el cursor para indicar que es interactivo */
+}
+
+.mission:hover, .vision:hover {
+  transform: translateY(-10px); /* Elevar la tarjeta cuando se pasa el cursor */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Aumentar la sombra para resaltar la tarjeta */
+  background-color: #e2e2e2; /* Cambiar el fondo al pasar el cursor */
+}
+
+.mission h2, .vision h2 {
+  font-size: 1.5rem;
+  color: #023a51;
+  margin-bottom: 1rem;
+}
+
+.mission p, .vision p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.mission:active, .vision:active {
+  transform: scale(0.98); /* Reducir ligeramente el tamaño al hacer clic */
+}
+
+
 /* ==== FOOTER ==== */
 footer.footer {
   position: relative;
