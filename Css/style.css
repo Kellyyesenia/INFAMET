@@ -12,11 +12,12 @@ body {
 }
 
 /* Estilo para el nav */
+/* Estilo para el nav */
 nav.navbar {
   position: relative;
   height: 50vh;
   background:
-    linear-gradient(to top, rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    linear-gradient(to top, rgba(255, 255, 255, 0.712), rgba(255,255,255,0.5)),
     url('../img/Producto.png') center/cover no-repeat;
   padding: 0.5rem 1rem;
   border-bottom: none;
@@ -45,8 +46,16 @@ nav.navbar {
     5% 89%,
     0% 85%
   );
+  box-shadow: 
+    inset 0 -5px 10px rgba(0, 0, 0, 0.1),  /* Sombra interior más suave */
+    0 15px 30px rgba(0, 0, 0, 0.2),   /* Sombra exterior */
+    0 5px 15px rgba(255, 255, 255, 0.1); /* Sombra más tenue de luz, para simular relieve */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
 }
 
+/* Sombra interior para darle más relieve */
 nav.navbar::after {
   content: '';
   position: absolute;
@@ -60,12 +69,14 @@ nav.navbar::after {
     40% 50%, 50% 80%, 60% 55%, 70% 75%,
     80% 50%, 90% 70%, 100% 60%, 100% 100%, 0 100%
   );
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); /* Sombra superior */
+  box-shadow: 0 -6px 10px rgba(143, 143, 143, 0.3),  /* Sombra exterior */
+    inset 0 5px 10px rgba(0, 0, 0, 0.1);  /* Sombra interna */
   z-index: 2;
 }
 
+
 nav.navbar {
-  box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.15); /* Sombra interna abajo */
+  box-shadow: inset 0 -5px 10px rgba(10, 10, 10, 0.15); /* Sombra interna abajo */
 }
 
 nav .container {
@@ -112,14 +123,16 @@ nav .container {
 }
 
 .menu-item {
-  color: #1d4ed8; /* Azul más contrastante */
+  color: #175276; /* Azul más contrastante */
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 900;
+  font-size: 1.8rem; /* Tamaño de la fuente (ajústalo según lo necesites) */
   transition: color 0.3s, transform 0.3s ease;
 }
 
+
 .menu-item:hover {
-  color: #ffffff; /* Color de texto al pasar el mouse */
+  color: #023a51; /* Color de texto al pasar el mouse */
 }
 
 .menu li {
@@ -130,24 +143,144 @@ nav .container {
   transform: translateY(-5px);
 }
 
-/* Imagen decorativa debajo del logo */
-.decoracion-logo {
-  display: block;
-  margin-top: -10px;
-  width: 120px; /* o el tamaño que desees */
-  opacity: 0.5;
-  pointer-events: none;
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilo básico para el footer */
+
+
+
+
+footer.footer {
+  position: relative;
+    background:
+    linear-gradient(to top, rgba(255, 255, 255, 0.712), rgba(255,255,255,0.5)),
+    url('../img/Producto.png') center/cover no-repeat;
+  padding: 0.5rem 1rem;
+  color: #175276;
+
+  font-family: 'Space Grotesk', sans-serif;
+  color: #333;
+  padding: 2rem 1rem;
+  clip-path: polygon(
+    0 15%, 5% 11%, 10% 15%, 15% 11%,
+    20% 16%, 25% 12%, 30% 17%, 35% 13%,
+    40% 18%, 45% 14%, 50% 19%, 55% 14%,
+    60% 18%, 65% 13%, 70% 17%, 75% 12%,
+    80% 16%, 85% 11%, 90% 15%, 95% 11%,
+    100% 15%, 100% 100%, 0% 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.1),  /* Sombra interna arriba */
+    0 -15px 30px rgba(0, 0, 0, 0.2),      /* Sombra exterior arriba */
+    0 -5px 15px rgba(255, 255, 255, 0.1); /* Luz tenue para relieve */
+  z-index: 1;
 }
 
-/* Imagen decorativa debajo del menú */
-.decoracion-menu {
-  display: block;
-  margin-top: 10px;
+
+footer.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 70px;
   width: 100%;
-  max-width: 400px;
-  opacity: 0.3;
-  pointer-events: none;
-  margin-left: auto;
-  margin-right: auto;
+  background: transparent; /* ✅ Sin imagen */
+  clip-path: polygon(
+    0 0, 10% 10%, 20% 5%, 30% 15%,
+    40% 0%, 50% 10%, 60% 5%, 70% 15%,
+    80% 0%, 90% 10%, 100% 0, 100% 100%, 0 100%
+  );
+  box-shadow:
+    0 6px 10px rgba(143, 143, 143, 0.3),
+    inset 0 -5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.footer-logo-img {
+  height: 50px; /* Ajusta el tamaño del logo */
+}
+
+.footer-links {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.footer-links ul li {
+  margin: 0;
+}
+
+.footer-links ul li a {
+  color: #175276;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 
+    color 0.3s ease,
+    text-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #023a51;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transform: scale(1.05);
+}
+
+footer.footer::before {
+  pointer-events: none; /* Muy importante para que no bloquee clics */
+}
+
+
+
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social .social-icon img {
+  width: 30px; /* Ajusta el tamaño de los íconos */
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social .social-icon img:hover {
+  transform: scale(1.1); /* Efecto de aumento al pasar el cursor */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  color: #023a51;
+}
