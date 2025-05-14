@@ -1,0 +1,107 @@
+/* Aplica al contenedor del nav */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: #e6e6e6; /* bg-gray-950 para un fondo más oscuro */
+  color: white;
+  min-height: 100vh;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para el nav */
+nav.navbar {
+  height: 50vh;
+  background: 
+    linear-gradient(to top, rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+    url('../img/Producto.png') center/cover no-repeat;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilo para el logo */
+.logo-img {
+  height: 120px; /* Tamaño de la imagen del logo */
+  margin-right: 1rem;
+  transition: transform 0.3s ease;
+  position: relative; /* Necesario para colocar el pseudo-elemento */
+}
+
+/* Pseudo-elemento para el rasgado */
+.logo-img::after {
+  content: ''; /* Necesario para crear el pseudo-elemento */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Altura del rasgado, puedes ajustarlo */
+  background: url('ruta/a/tu/imagen-de-rasgado.png') repeat-x; /* Puedes usar una imagen de rasgado */
+  background-size: cover;
+  z-index: -1; /* Coloca el pseudo-elemento detrás de la imagen */
+}
+
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Menú de navegación */
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  color: #1d4ed8; /* Azul más contrastante */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s ease;
+}
+
+.menu-item:hover {
+  color: #ffffff; /* Color de texto al pasar el mouse */
+}
+
+.menu li {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu li:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagen decorativa debajo del logo */
+.decoracion-logo {
+  display: block;
+  margin-top: -10px;
+  width: 120px; /* o el tamaño que desees */
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Imagen decorativa debajo del menú */
+.decoracion-menu {
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  opacity: 0.3;
+  pointer-events: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
